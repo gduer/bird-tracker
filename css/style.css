@@ -1,0 +1,121 @@
+html, body {
+    font-family: 'Raleway', sans-serif;
+    overflow-y:hidden;
+}
+
+#map{
+  width: 100%; height: 100%; padding: 0; margin: 0;
+}
+
+#navbar{
+  z-index: 100;
+  background-color: black;
+  color: white;
+  display:inline-block;
+  float:none;
+  text-align:center;
+  width:100%;
+}
+
+.legend {
+position: fixed;
+bottom: 25px;
+right: 25px;
+background-color: #000;
+z-index: 2000;
+height: 31%;
+opacity: 1;
+width: 15%;
+border-radius: 2px;
+padding-left: 15px;
+padding: 15px;
+color: white;
+font-size: 13px;
+opacity: 0.9;
+border:0.5px solid #585858;
+}
+
+.legend-boxes {
+height: 10px;
+width: 10px;
+margin-bottom: 17px;
+border-radius: 20px;
+opacity: 1;
+}
+
+.legend-text{
+float: left;
+margin-left: 30px;
+margin-top: -4px;
+}
+
+#Argentine {
+background-color: #fabebe;
+}
+
+#Blackpoll {
+background-color: #f58231;
+}
+
+#Himalayan {
+background-color: #3cb44b;
+}
+
+#Lesser {
+background-color: #ffe119;
+}
+
+#Osprey {
+background-color: #0082c8;
+}
+
+#Spectacled {
+background-color: #46f0f0;
+}
+
+#Turkey {
+background-color: #e6194b;
+}
+
+#White {
+background-color: white;
+}
+
+div.cartodb-timeslider{
+  opacity:1;
+  position:absolute;
+  display:inline-block;
+  height:41px;
+  width:30%!important;
+  margin-bottom:45px;
+  padding:0;
+  background:#000;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  -ms-border-radius:2px;
+  -o-border-radius:2px;
+  border-radius:2px;
+  border:0.5px solid #585858;
+  text-align:left;
+  z-index:105;
+};
+
+#learnmore{
+  position: absolute;
+  width: 20px;
+  top: 0;
+  float:right;
+}
+
+.title{
+  position:absolute;
+  color: white;
+  z-index: 2000;
+  right: 44%;
+  top: 12px;
+  font-size: 17px;
+}
+
+.logo{
+  width:100%;
+}

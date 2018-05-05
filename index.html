@@ -1,0 +1,241 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <body>
+
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <div class="title"> BIRD <i class="fas fa-dove" onclick="play()"></i> TRACKER </div>
+
+    <nav class="navbar navbar-custom" id='navbar'>
+    <div id="learnmore"><button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
+      Learn More
+    </button></div>
+    </nav>
+
+    <audio id="audio" src="sound/birds001.wav" ></audio>
+
+    <div id="map"></div>
+
+    <div class="legend">
+
+      <div class="legend-text">Argentine Barn Swallows</div>
+      <div class="legend-boxes" id="Argentine"></div>
+
+      <div class="legend-text">Blackpoll Warbler</div>
+      <div class="legend-boxes" id="Blackpoll"></div>
+
+      <div class="legend-text">Himalayan Griffon</div>
+      <div class="legend-boxes" id="Himalayan"></div>
+
+      <div class="legend-text">Lesser Black-Backed Gulls</div>
+      <div class="legend-boxes" id="Lesser"></div>
+
+      <div class="legend-text">Osprey Bierregaard</div>
+      <div class="legend-boxes" id="Osprey"></div>
+
+      <div class="legend-text">Spectacled Eiders</div>
+      <div class="legend-boxes" id="Spectacled"></div>
+
+      <div class="legend-text">Wild Turkey</div>
+      <div class="legend-boxes" id="Turkey"></div>
+
+      <div class="legend-text">White-Crested Elaenia</div>
+      <div class="legend-boxes" id="White"></div>
+
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="modal" class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Get to Know the Birds</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-Argentine" role="tab" aria-controls="v-pills-home" aria-selected="true">Argentine Barn Swallows</a>
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-Blackpoll" role="tab" aria-controls="v-pills-profile" aria-selected="false">Blackpoll Warbler</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-Himalayan" role="tab" aria-controls="v-pills-messages" aria-selected="false">Himalayan Griffon</a>
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-Lesser" role="tab" aria-controls="v-pills-settings" aria-selected="false">Lesser Black-Backed Gulls</a>
+          <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-Osprey" role="tab" aria-controls="v-pills-home" aria-selected="false">Osprey Bierregaard</a>
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-Spectacled" role="tab" aria-controls="v-pills-profile" aria-selected="false">Spectacled Eiders</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-Wild" role="tab" aria-controls="v-pills-messages" aria-selected="false">Wild Turkey</a>
+          <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-White" role="tab" aria-controls="v-pills-settings" aria-selected="false">White-Crested Elaenia</a>
+        </div>
+
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-Argentine" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h3>Argentine Barn Swallows   </h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/Argentine%20Barn%20Swallows.jpg"></p>
+<p>The barn swallow (Hirundo rustica) is the most widespread species of swallow in the world. It is a distinctive passerine bird with blue upperparts, a long, deeply forked tail and curved, pointed wings. It is found in Europe, Asia, Africa and the Americas. In Anglophone Europe it is just called the swallow; in Northern Europe it is the only common species called a "swallow" rather than a "martin".<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Blackpoll" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <h3>Blackpoll Warbler</h3>
+            <p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/Blackpoll%20Warbler.jpg"></p>
+            <p>The blackpoll warbler (Setophaga striata) is a New World warbler. Breeding males are mostly black and white. They have a prominent black cap, white cheeks and white wing bars. The blackpoll breeds in forests of northern North America, from Alaska, through most of Canada, the Great Lakes region and New England. They are a common migrant through much of North America. Come fall, they fly South to the Greater Antilles and the Northeastern coasts of South America in a non-stop long-distance migration over open water, averaging 2500 km, one of the longest distance non-stop overwater flights ever recorded for a migratory songbird. Rare vagrants to western Europe, they are one of the more frequent transatlantic passerine wanderers.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Himalayan" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <h3>Himalayan Griffon</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/Himalayan%20Griffon.jpg"></p>
+<p>The Himalayan vulture or Himalayan griffon vulture (Gyps himalayensis) is an Old World vulture in the family Accipitridae. Closely related to the European griffon vulture (G. fulvus) and once considered a subspecies of it, this species is found along the Himalayas and the adjoining Tibetan Plateau. It is one of the two largest Old World vultures and true raptors.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Lesser" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <h3>Lesser Black-Backed Gulls</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/lesser%20black-backed%20gulls.jpg"></p>
+<p>The lesser black-backed gull (Larus fuscus) is a large gull that breeds on the Atlantic coasts of Europe. It is migratory, wintering from the British Isles south to West Africa. It is a regular winter visitor to the east coast of North America, probably from the breeding population in Iceland.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Osprey" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h3>Osprey Bierregaard</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/Osprey%20Bierregaard.jpg"></p>
+<p>The osprey or more specifically the western osprey (Pandion haliaetus) — also called sea hawk, river hawk, and fish hawk — is a diurnal, fish-eating bird of prey with a cosmopolitan range. It is a large raptor, reaching more than 60 cm (24 in) in length and 180 cm (71 in) across the wings. It is brown on the upperparts and predominantly greyish on the head and underparts.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Spectacled" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <h3>Spectacled Eiders</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/spectacled%20eiders.jpg"></p>
+<p>The spectacled eider (pronounced /ˈaɪ.dər/) (Somateria fischeri) is a large sea duck that breeds on the coasts of Alaska and northeastern Siberia.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-Wild" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <h3>Turkey</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/turkey.jpg"></p>
+<p>The wild turkey (Meleagris gallopavo) is an upland ground bird native to North America and is the heaviest member of the diverse Galliformes. It is the same species as the domestic turkey, which was originally derived from a southern Mexican subspecies of wild turkey (not the related ocellated turkey). Although native to North America, the turkey probably got its name from the domesticated variety being imported to Britain in ships coming from the Levant via Spain. The British at the time therefore associated the wild turkey with the country Turkey and the name prevails.<p>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-White" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <h3>White-Crested Elaenia</h3>
+<p><img class="logo" alt="Brand" src="https://raw.githubusercontent.com/zhaoanbei/birds/master/pics/white-crested%20Elaenia.jpg"></p>
+<p>The white-crested elaenia (Elaenia albiceps) is a species of bird in the family Tyrannidae, the tyrant flycatchers. It has several subspecies breeding across southern and western parts of South America. Southern birds migrate north in winter.<p>
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script>
+      // define the torque layer style using cartocss
+
+      var CARTOCSS = [
+          'Map {',
+          ' -torque-frame-count: 365;',
+          ' -torque-animation-duration: 85;',
+          ' -torque-time-attribute: "datetime";',
+          ' -torque-aggregation-function: "CDB_math_mode(nameid)";',
+          ' -torque-resolution: 1;',
+          ' -torque-data-aggregation:"linear";',
+        '}',
+        ' #layer {',
+          ' marker-width: 3;',
+          ' marker-fill: #66C5CC;',
+          ' marker-fill-opacity: 1;',
+          ' marker-line-width: 0;',
+          ' comp-op: multiply;',
+          ' [value=1]{',
+          ' marker-fill:#3cb44b',
+          ' }',
+          ' [value=2]{',
+          ' marker-fill:#ffe119;',
+          ' }',
+          ' [value=3]{',
+          ' marker-fill:#e6194b;',
+          ' }',
+          ' [value=4]{',
+          ' marker-fill:#0082c8;',
+          ' }',
+          ' [value=5]{',
+          ' marker-fill:#f58231;',
+          ' }',
+          ' [value=6]{',
+          ' marker-fill:white;',
+          ' }',
+          ' [value=7]{',
+          ' marker-fill:#46f0f0;',
+          ' }',
+          ' [value=9]{',
+          ' marker-fill:#fabebe;',
+          ' }',
+          '}',
+          '#layer[frame-offset=1] {',
+          '  marker-width: 3;',
+          '  marker-fill-opacity: 0.30;',
+          '}',
+          '#layer[frame-offset=2] {',
+          '  marker-width: 3;',
+          '  marker-fill-opacity: 0.15;',
+          '}'
+
+      ].join('\n');
+
+function main() {
+      var map = new L.Map('map', {
+        zoomControl: true,
+        center: [40, 0],
+        zoom: 3,
+        minZoom: 2
+      });
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/anbei/cjgdsyukc000i2rlpoccdk47c/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW5iZWkiLCJhIjoiY2plMGN3OW01MTNuZjJ4cDlmdjV4em54MiJ9._iiJpEn1c6SeWbvGD1fNUA', {
+        attribution: 'CartoDB'
+      }).addTo(map);
+
+      cartodb.createLayer(map, {
+                type: "torque",
+                order: 1,
+                options: {
+                  query: "SELECT * FROM birds_final_final_1",
+                  table_name: "birds_final_final_1",
+                  user_name: "anbeizhao",
+                  tile_style: CARTOCSS
+                  }
+              }).done(function(layer) {
+                var slider = map.viz.timeSlider;
+                function pad(n) {
+                  return n < 10 ? '0' + n : n;
+                }
+                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                slider.formatter(function(d) {
+                  return pad(months[d.getMonth()]) + " " + pad(d.getDate());
+                })
+                map.addLayer(layer);
+              });
+}
+
+//$('#Myslider').slider();
+
+function play(){
+     var audio = document.getElementById("audio");
+     audio.play();
+               }
+
+window.onload = main;
+
+    </script>
+  </body>
+
+</html>
