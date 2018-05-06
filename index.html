@@ -205,14 +205,14 @@ function main() {
       }).addTo(map);
 
       cartodb.createLayer(map, {
+                https: true,
                 type: "torque",
                 order: 1,
                 options: {
                   query: "SELECT * FROM birds_final_final_1",
                   table_name: "birds_final_final_1",
                   user_name: "anbeizhao",
-                  tile_style: CARTOCSS,
-                  https: true
+                  tile_style: CARTOCSS
                   }
               }).done(function(layer) {
                 var slider = map.viz.timeSlider;
