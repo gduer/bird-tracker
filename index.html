@@ -214,7 +214,8 @@ function main() {
                   user_name: "anbeizhao",
                   tile_style: CARTOCSS
                   }
-              }).done(function(layer) {
+              },
+          {https:true}).done(function(layer) {
                 var slider = map.viz.timeSlider;
                 function pad(n) {
                   return n < 10 ? '0' + n : n;
