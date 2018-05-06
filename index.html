@@ -205,10 +205,10 @@ function main() {
       }).addTo(map);
 
       cartodb.createLayer(map, {
-                https: true,
                 type: "torque",
                 order: 1,
                 options: {
+                  https: true,
                   query: "SELECT * FROM birds_final_final_1",
                   table_name: "birds_final_final_1",
                   user_name: "anbeizhao",
