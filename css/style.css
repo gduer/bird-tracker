@@ -117,5 +117,9 @@ div.cartodb-timeslider{
 }
 
 .logo{
-  width:100%;
+  width:50%;
+}
+
+#exampleModal{
+  font-size: 14px;
 }
